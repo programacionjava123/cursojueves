@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h2>Alertas en Selenium Webdriver</h2>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>SIMPLE ALERT</h2>
+       
+        <button  class="button" id="alert1" onclick="myFunction()">Simple alert</button>
+
+        <script>
+        function myFunction() {
+          alert("I am an alert box!");
+        }
+        </script>
+
+
+    </div>
+
+
+    <div class="card">
+      <h2>CONFIRMATION ALERT</h2>
+
+        <button class="button" id="alert2" onclick="alert2()">Confimration alert button</button>
+
+        <p id="demo"></p>
+
+        <script>
+        function alert2() {
+          var txt;
+          if (confirm("Press a button!")) {
+            txt = "Alert accepted!";
+          } else {
+            txt = "Alert cancelled";
+          }
+          document.getElementById("demo").innerHTML = txt;
+        }
+        </script>
+  </div>
+
+  <div class="card">
+ 
+
+     <h2>PROMPT ALERT</h2>
+
+      <button class="button" id="alert3" onclick="alerta3()">Alert with messages</button>
+
+        <p id="demo3"></p>
+
+        <script>
+        function alerta3() {
+          var txt;
+          var person = prompt("Write your name:", "John Smith");
+          if (person == null || person == "") {
+            txt = "Alert cancelled.";
+          } else {
+            txt = "Hi " + person + "! How are you?";
+          }
+          document.getElementById("demo3").innerHTML = txt;
+        }
+        </script>
+
+  </div>
+
+</body>
+</html>
